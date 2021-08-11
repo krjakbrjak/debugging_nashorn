@@ -5,3 +5,8 @@ services:
       context: .
     ports:
       - "8080:8080"
+      - "5005:5005"
+    environment:
+      - JPDA_ADDRESS=5005
+      - JPDA_TRANSPORT=dt_socket
+    command: /usr/local/tomcat/bin/catalina.sh jpda run
